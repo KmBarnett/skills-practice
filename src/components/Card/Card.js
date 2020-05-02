@@ -1,10 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
+import './Card.css'
 
-
-function Card(props) {
+const Card = ({ id, title, description, removeIdea }) => {
   return (
-    <article className='card'>
-    </article>
+    <section className='card'>
+      <h3>{ title }</h3>
+      <p>{ description }</p>
+      <button onClick={() => removeIdea(id)}>Delete</button>
+    </section>
   )
 }
 

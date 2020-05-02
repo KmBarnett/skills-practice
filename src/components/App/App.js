@@ -1,18 +1,22 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import logo from './assets/logo.svg';
 import './App.css';
 import Form from '../Form/Form.js'
 import Card from '../Card/Card.js'
+import Ideas from '../Ideas/Ideas.js'
 
 
-class App extends Component {
-  constructor() {
-    super()
-    this.state = {
-      ideas: []
-    }
+const App = () => {
+  const [ideas, changeIdeas] = useState([])
+
+  const addIdea = idea => {
+    changeIdeas([...ideas, idea])
   }
-  render() {
+
+  const removeIdea = id => {
+    changeIdeas(ideas.filter(idea => idea.id !== id))
+  }
+
     return (
       <div className="App">
         <header className="App-header">
@@ -20,11 +24,10 @@ class App extends Component {
           <h1 className='rotate-center'>?</h1>
         </header>
         <main>
-          <Form />
-          <Card />
+          <Form addIdea={addIdea} />
+          <Ideas ideas={ideas} removeIdea={removeIdea} />
         </main>
-      </div>
-    )}
+      </div>)
 }
 
 export default App;
