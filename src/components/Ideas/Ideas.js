@@ -14,12 +14,9 @@ const ideaCards = ideas.map(idea => {
   })
 
   return (
-    <section>
-      <h2>Ideas Component</h2>
       <section className='ideas'>
         {ideaCards}
       </section>
-    </section>
   )
 }
 

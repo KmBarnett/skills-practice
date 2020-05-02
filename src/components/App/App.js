@@ -20,6 +20,7 @@ const App = () => {
     return (
       <div className="App">
         <header className="App-header">
+          <h1 className='rotate-center'>?</h1>
           <h1>Idea Box</h1>
           <h1 className='rotate-center'>?</h1>
         </header>
